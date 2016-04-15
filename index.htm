@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" value="IE=9">
+	<title>This is a Yunba danmaku</title>
+	<!-- 在这里载入CCL的基础库 -->
+	<link rel="stylesheet" href="lib/style.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/CommentCoreLibrary.js"></script>
+  <script src="lib/socket.io-1.3.5.min.js"></script>
+  <script src="lib/yunba-js-sdk.js"></script>
+  <!-- 你还可以载入其他的库，比如jQuery之类的 -->
+	<link rel="stylesheet" href="page-styles.css" />
+</head>
+<body>
+	<!-- CommentCoreLibrary 的基础 DOM 结构。这个结构也可以动态生成，只要 class 设置正确即可 -->
+	<div id="my-player" class="abp" style="width:100%; height:300px; background:#000;">
+		<div id="my-comment-stage" class="container"></div>
+	</div>
+
+	<!-- 当然可以放很多别的东西 -->
+	<div class="controlbox">
+		<h3>调试</h3>
+		<ul>
+			<li><a href="#" id="btnSndMsg">发送消息</a> <span
+        id="txPlayPos">0</span></li>
+		</ul>
+	</div>
+
+	<!-- 下面接入 CCL 代码 -->
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
