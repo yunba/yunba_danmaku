@@ -107,13 +107,13 @@ function setMessageCallback() {
 
 // 接收到消息后处理消息内容
 function dataController(data) {
-	var danmaku = {
-		"mode":1,
-    "text":data,
-    "stime":0000,
-    "size":30,
-    "color":0xff0000
-  };
+    var danmaku = {
+        "mode":1,
+        "text":data,
+        "stime":0000,
+        "size":30,
+        "color":0xff0000
+    };
 	CM.send(danmaku);
 }
 
@@ -134,12 +134,22 @@ window.addEventListener('load', function(){
 	$('btnSndMsg').addEventListener('click', function(e){
 		e.preventDefault(); // 抑制默认操作
 		var data = prompt("publish message");
-    if (!data) return;
-    publish(CHATROOM_TOPIC, data);
+		if (!data) return;
+		publish(CHATROOM_TOPIC, data);
 	});
 
-	yunba_demo = new Yunba({
-          appkey: '5487f75052be1f7e1dd834e8'
-  });
-  initialize();
+    yunba_demo = new Yunba({
+	    appkey: '5487f75052be1f7e1dd834e8'
+    });
+    initialize();
+
+    $('my-player').addEventListener("click",function(){
+        var videoPlayer = $('abpVideo');
+        if (videoPlayer == null)
+            return;
+        if (videoPlayer.paused)
+            videoPlayer.play();
+        else
+            videoPlayer.pause();
+    });
 });
